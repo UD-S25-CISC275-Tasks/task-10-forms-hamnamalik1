@@ -29,7 +29,7 @@ export function GiveAttempts(): React.JSX.Element {
             <input
                 type="number"
                 value={requestedAttempts}
-                onChange={(e) => setRequestedAttempts(e.target.value)}
+                onChange={(e) => { setRequestedAttempts(e.target.value); }}
                 placeholder="Enter attempts to gain"
             />
             <button onClick={useAttempt} disabled={attemptsLeft === 0}>

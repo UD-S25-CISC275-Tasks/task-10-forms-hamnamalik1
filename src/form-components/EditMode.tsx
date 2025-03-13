@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap"; // Import Bootstrap form components
 
 export function EditMode(): React.JSX.Element {
     // State for edit mode, name, and student status
@@ -10,15 +11,16 @@ export function EditMode(): React.JSX.Element {
         <div>
             <h3>Edit Mode</h3>
 
-            {/* Toggle switch for edit mode */}
-            <label>
-                <input
-                    type="checkbox"
-                    checked={isEditMode}
-                    onChange={() => setIsEditMode(!isEditMode)}
-                />
-                Edit Mode
-            </label>
+            {/* Bootstrap Switch for Edit Mode */}
+            <Form.Check
+                type="switch"
+                id="edit-mode-switch"
+                label="Edit Mode"
+                checked={isEditMode}
+                onChange={() => {
+                    setIsEditMode(!isEditMode);
+                }}
+            />
 
             {/* Edit mode form */}
             {
@@ -27,14 +29,18 @@ export function EditMode(): React.JSX.Element {
                         <input
                             type="text"
                             value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            onChange={(e) => {
+                                setName(e.target.value);
+                            }}
                             placeholder="Enter your name"
                         />
                         <label>
                             <input
                                 type="checkbox"
                                 checked={isStudent}
-                                onChange={() => setIsStudent(!isStudent)}
+                                onChange={() => {
+                                    setIsStudent(!isStudent);
+                                }}
                             />
                             Student
                         </label>
