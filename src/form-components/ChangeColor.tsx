@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export function ChangeColor(): React.JSX.Element {
-    // Define a list of colors
     const colors = [
         "red",
         "blue",
