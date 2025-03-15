@@ -13,7 +13,6 @@ export function ChangeColor(): React.JSX.Element {
         "brown",
     ];
 
-    // State to store the selected color
     const [selectedColor, setSelectedColor] = useState<string>(colors[0]);
 
     return (
